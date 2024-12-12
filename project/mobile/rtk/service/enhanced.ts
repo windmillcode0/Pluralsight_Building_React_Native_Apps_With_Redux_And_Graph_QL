@@ -12,6 +12,9 @@ const enhancedApi = generatedApi.enhanceEndpoints({
     FavoriteSessions: {
       providesTags: ['UserFavorites'],
     },
+    CreateSession: {
+      invalidatesTags: ['Session'],
+    },
     MarkSessionAsFavorite: {
       invalidatesTags: ['UserFavorites'],
       async onQueryStarted({ id }, { dispatch, queryFulfilled }) {

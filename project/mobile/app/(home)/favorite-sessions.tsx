@@ -9,16 +9,16 @@ function renderItem({
   item: { id: string; title: string; removeFavorite: () => void };
 }) {
   return (
-    <View className="flex flex-row bg-neutral-800 items-center justify-between p-2">
+    <View className="flex flex-row bg-neutral-900 items-center justify-between p-2">
       <View className="flex justify-center">
-        <Text>{session.title}</Text>
+        <Text className="text-white">{session.title}</Text>
       </View>
       <View className="flex flex-row items-center">
         <TouchableOpacity onPress={() => console.log('Share pressed')}>
           <Feather
             name="share"
             size={24}
-            color="black"
+            color="white"
           />
         </TouchableOpacity>
 
@@ -26,7 +26,7 @@ function renderItem({
           <Feather
             name="delete"
             size={24}
-            color="black"
+            color="white"
           />
         </TouchableOpacity>
       </View>
