@@ -10,7 +10,7 @@ export default function Index() {
 
   if (token) {
     console.log('redirecting to home');
-    return <Redirect href="/(home)/sessions" />;
+    return <Redirect href="/(home)" />;
   }
 
   return (

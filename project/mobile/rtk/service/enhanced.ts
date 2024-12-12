@@ -1,7 +1,7 @@
 import { api as generatedApi } from './generated';
 
 const enhancedApi = generatedApi.enhanceEndpoints({
-  addTagTypes: ['Session', 'Speaker', 'UserFavorites'],
+  addTagTypes: ['Session', 'Speaker', 'UserFavorites','MySessions'],
   endpoints: {
     Sessions: {
       providesTags: ['Session'],
@@ -13,8 +13,11 @@ const enhancedApi = generatedApi.enhanceEndpoints({
       providesTags: ['UserFavorites'],
     },
     CreateSession: {
-      invalidatesTags: ['Session'],
+      invalidatesTags: ['Session','MySessions'],
     },
+    MySessions: {
+      providesTags: ['MySessions'],
+    },    
     MarkSessionAsFavorite: {
       invalidatesTags: ['UserFavorites'],
       async onQueryStarted({ id }, { dispatch, queryFulfilled }) {

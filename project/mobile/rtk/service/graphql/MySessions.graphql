@@ -1,0 +1,17 @@
+query MySessions {
+  me {
+    name
+    email
+    speaker {
+      id
+      name
+      sessions {
+    id
+    title 
+    description
+    level 
+    format
+      }
+    }
+  }
+}
