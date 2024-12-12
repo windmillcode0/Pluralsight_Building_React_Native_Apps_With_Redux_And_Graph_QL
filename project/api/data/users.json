@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "email": "admin@globomantics.com",
+      "hash": "$2a$10$7bLV5PLjd4CDjQJqmkgDEuLlzXNsprI561a0Btk.h9YeKfsvqiahq",
+      "role": "ADMIN",
+      "id": "c22e95c6-e111-4655-b54a-8b12392e312e",
+      "name": "Admin User"
+    },
+    {
+      "email": "globo_user@gmail.com",
+      "hash": "$2a$10$Urfr7twL2pnwQAtRVO9qp.62rCroNbHAzPS8UZkw9O8ktfA1M8QJG",
+      "role": "USER",
+      "id": "10",
+      "favorites": [
+        "85595",
+        "84375",
+        "80310"
+      ],
+      "name": "Globo User"
+    },
+    {
+      "id": "3",
+      "name": "Tlk",
+      "email": "tlk@gmail.com",
+      "hash": "$2a$10$TVJuRV0MV5Xo5hRkyVf/COWSqQH75oMHu2MusIQUEvS/oFM2yeHnm",
+      "role": "USER",
+      "favorites": [
+        "84473",
+        "84375",
+        "79874"
+      ]
+    }
+  ]
+}

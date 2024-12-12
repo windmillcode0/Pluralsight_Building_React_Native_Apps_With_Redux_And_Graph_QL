@@ -1,0 +1,11 @@
+query FavoriteSessions {
+  me {
+    favorites {
+      id
+      title
+      day
+      format
+      level
+    }
+  }
+}
