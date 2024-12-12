@@ -46,26 +46,28 @@ export default function SignIn() {
   const [signIn] = useSignInMutation();
 
   return (
-    <View className="flex-1 justify-center items-center p-3 gap-2 bg-neutral-800">
+    <View className="flex-1 justify-center items-center p-3 gap-2 bg-neutral-900">
       <Image
         className="h-52"
         resizeMode="contain"
         source={require('~/assets/globomantics-logo-bug-darkblue.png')}
       />
       <View className="w-full gap-2">
-        <Text className="text-2xl font-bold text-center">Sign In</Text>
+        <Text className="text-2xl font-bold text-center text-white">Sign In</Text>
       </View>
       <View className="w-full gap-2">
         <TextInput
-          className="p-3 border-2 border-gray-400 bg-neutral-800 text-gray-400 w-full"
+          className="p-3 border-2 border-gray-600 bg-neutral-800 text-gray-300 w-full"
           placeholder="Email Address"
+          placeholderTextColor="gray"
           value={state.email}
           inputMode="email"
           onChangeText={setEmail}
         />
         <TextInput
-          className="p-3 border-2 border-gray-400 bg-neutral-800 text-gray-400 w-full"
+          className="p-3 border-2 border-gray-600 bg-neutral-800 text-gray-300 w-full"
           placeholder="Password"
+          placeholderTextColor="gray"
           value={state.password}
           inputMode="text"
           secureTextEntry
@@ -85,16 +87,17 @@ export default function SignIn() {
 
             router.replace('(home)/sessions');
           }}>
-          Sign In
+          <Text className="text-white">Sign In</Text>
         </Button>
         <Button
           onPress={async () => {
             console.log('navigating to home');
             router.navigate('/home/');
           }}>
-          Navigate without Auth
+          <Text className="text-white">Navigate without Auth</Text>
         </Button>
       </View>
     </View>
+
   );
 }

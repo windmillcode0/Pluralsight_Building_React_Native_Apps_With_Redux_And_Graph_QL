@@ -13,7 +13,7 @@ const createToken = (userInfo: UserType) => {
     email: userInfo.email,
     role: userInfo.role,
     name: userInfo.name,
-    exp: Math.floor(Date.now() / 1000) + 3600, // expires in 1 hour
+    exp: Math.floor(Date.now() / 1000) + 36000, // expires in 1 hour
   };
 
   const encodedHeader = base64url(JSON.stringify(header));

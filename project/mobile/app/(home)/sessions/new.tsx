@@ -6,6 +6,7 @@ import { Picker } from '@react-native-picker/picker';
 import { Button } from '~/components/Button';
 // import { useCreateSessionMutation } from '~/rtk/service/generated';
 import { router } from 'expo-router';
+import { useCreateSessionMutation } from '~/rtk/service/generated';
 
 const formatOptions = ['Lecture', 'Workshop', 'Keynote'] as const;
 const levelOptions = ['Beginner', 'Intermediate', 'Advanced'] as const;
@@ -41,6 +42,12 @@ export default function CreateNewSession() {
   
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     console.log('values', data);
+
+    submitSession({ session: data })
+      .unwrap()
+      .then(() => {
+        router.back();
+      });    
   };
 
   const onError: SubmitErrorHandler<FormInputs> = (error) => {

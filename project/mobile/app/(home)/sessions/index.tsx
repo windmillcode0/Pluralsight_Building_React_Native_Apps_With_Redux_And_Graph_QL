@@ -90,11 +90,11 @@ export default function SessionsScreen() {
         refreshing={isFetching}
         keyboardShouldPersistTaps="handled"
       />
-      <View className="p-4 bg-neutral-800">
+      <TouchableOpacity className="p-4 bg-red-800">
         <Link href="/(home)/sessions/new" asChild>
-          <Button title="Create New Session"></Button>
+          <Text className="text-white">Create New Session</Text>
         </Link>
-      </View>
+      </TouchableOpacity>
     </View>
   );
   

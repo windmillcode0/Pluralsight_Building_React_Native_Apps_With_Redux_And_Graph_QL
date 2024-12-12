@@ -1,4 +1,4 @@
-import { Link,Redirect } from 'expo-router';
+import { Link, Redirect } from 'expo-router';
 import React from 'react';
 
 import { Button } from '../components/Button';
@@ -14,23 +14,25 @@ export default function Index() {
   }
 
   return (
-    <View className="flex flex-1 justify-center items-center gap-3 px-4">
+    <View className="flex flex-1 justify-center items-center gap-3 px-4 bg-neutral-900">
       <Image
         className="h-20"
         resizeMode="contain"
         source={require('~/assets/globomantics-logo-darkblue.png')}
       />
-      <Text className="text-2xl text-center">Globomantics Developer Conference</Text>
-      <Text className="text-lg text-center">
+      <Text className="text-2xl text-center text-white">Globomantics Developer Conference</Text>
+      <Text className="text-lg text-center text-gray-300">
         Explore speakers and sessions. Create an account to submit a session of your own!
       </Text>
       <Link href="/sign-in" asChild>
-        <Button>Sign In to Get Started!</Button>
+        <Button>
+          <Text className="text-white">Sign In to Get Started!</Text>
+        </Button>
       </Link>
 
-      <Text>
+      <Text className="text-gray-300">
         Don't have an account?{' '}
-        <Link href="/sign-up" className="font-bold">
+        <Link href="/sign-up" className="font-bold text-white">
           Sign Up
         </Link>
       </Text>
