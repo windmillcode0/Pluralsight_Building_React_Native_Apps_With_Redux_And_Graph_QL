@@ -2,16 +2,16 @@ import { View, FlatList, Text, ActivityIndicator, TouchableOpacity, Button } fro
 import { Feather } from '@expo/vector-icons';
 import { useMarkSessionAsFavoriteMutation, useSessionsQuery, useUserFavoritesQuery } from "~/rtk/service/enhanced";
 import {Link } from 'expo-router';
-function renderItem({ item: session }: { item: { 
-  id: string; 
-  title: string, 
+function renderItem({ item: session }: { item: {
+  id: string;
+  title: string,
   markFavorite: () => void
   isFavorite: boolean
 } }) {
   return (
-    <View className="flex flex-row bg-white items-center justify-between p-2">
+    <View className="flex flex-row bg-black items-center justify-between p-2">
       <View className="flex justify-center">
-        <Text>{session.title}</Text>
+        <Text className="text-white">{session.title}</Text>
       </View>
       <View className="flex flex-row items-center">
         <TouchableOpacity
@@ -25,30 +25,30 @@ function renderItem({ item: session }: { item: {
             session.markFavorite();
           }}
         >
-          <Feather name={session.isFavorite ? 'heart' : 'circle'} size={24} color="black" />
+          <Feather name={session.isFavorite ? 'heart' : 'circle'} size={24} color="white" />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={{
-            backgroundColor: 'white',
+            backgroundColor: 'black',
             padding: 10,
             borderRadius: 5,
             marginRight: 10,
           }}
           onPress={() => console.log(`Shared session ${session.id}`)}
         >
-          <Feather name="share" size={24} color="black" />
+          <Feather name="share" size={24} color="white" />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={{
-            backgroundColor: 'white',
+            backgroundColor: 'black',
             padding: 10,
             borderRadius: 5,
           }}
           onPress={() => console.log(`Options for session ${session.id}`)}
         >
-          <Feather name="more-vertical" size={24} color="black" />
+          <Feather name="more-vertical" size={24} color="white" />
         </TouchableOpacity>
       </View>
     </View>
@@ -73,7 +73,7 @@ export default function SessionsScreen() {
   const myFavorites = myInfo?.me?.favorites?.map((item) => item.id) ?? [];
 
   return (
-    <View className="flex flex-column flex-1">
+    <View className="flex flex-column flex-1 bg-neutral-900">
       <FlatList
         data={sessions.map((session) => ({
           ...session,
@@ -90,11 +90,12 @@ export default function SessionsScreen() {
         refreshing={isFetching}
         keyboardShouldPersistTaps="handled"
       />
-      <View className="p-4">
+      <View className="p-4 bg-neutral-800">
         <Link href="/(home)/sessions/new" asChild>
           <Button title="Create New Session"></Button>
         </Link>
-      </View>      
+      </View>
     </View>
   );
+  
 }

@@ -9,7 +9,7 @@ function renderItem({
   item: { id: string; title: string; removeFavorite: () => void };
 }) {
   return (
-    <View className="flex flex-row bg-white items-center justify-between p-2">
+    <View className="flex flex-row bg-neutral-800 items-center justify-between p-2">
       <View className="flex justify-center">
         <Text>{session.title}</Text>
       </View>

@@ -12,28 +12,28 @@ function renderItem({ item: speaker }: { item: { id: string; name: string } }) {
       />
 
       <View className="flex justify-center">
-        <Text>{speaker.name}</Text>
+        <Text className="text-white">{speaker.name}</Text>
       </View>
       <View className="flex flex-row items-center">
         <Feather.Button
           name="heart"
           size={24}
-          color="black"
-          className="active:bg-slate-100 bg-white pr-0 mr-0"
+          color="white"
+          className="active:bg-gray-700 bg-black pr-0 mr-0"
           onPress={() => console.log(`Liked speaker ${speaker.id}`)}
         />
         <Feather.Button
           name="share"
           size={24}
-          color="black"
-          className="active:bg-slate-100 bg-white pr-0 mr-0"
+          color="white"
+          className="active:bg-gray-700 bg-black pr-0 mr-0"
           onPress={() => console.log(`Shared speaker ${speaker.id}`)}
         />
         <Feather.Button
           name="more-vertical"
           size={24}
-          color="black"
-          className="active:bg-slate-100 bg-white pr-0 mr-0"
+          color="white"
+          className="active:bg-gray-700 bg-black pr-0 mr-0"
           onPress={() => console.log(`Options for speaker ${speaker.id}`)}
         />
       </View>
@@ -62,15 +62,16 @@ export default function SpeakersScreen() {
   }
 
   return (
-    <View className="flex flex-column flex-1">
-      <FlatList
-        data={speakers}
-        keyExtractor={(speaker) => speaker.id}
-        ItemSeparatorComponent={Separator}
-        renderItem={renderItem}
-        onRefresh={refresh}
-        refreshing={isFetching}
-      />
-    </View>
+    <View className="flex flex-column flex-1 bg-black">
+    <FlatList
+      data={speakers}
+      keyExtractor={(speaker) => speaker.id}
+      ItemSeparatorComponent={Separator}
+      renderItem={renderItem}
+      onRefresh={refresh}
+      refreshing={isFetching}
+      contentContainerStyle={{ backgroundColor: 'black' }}
+    />
+  </View>
   );
 }

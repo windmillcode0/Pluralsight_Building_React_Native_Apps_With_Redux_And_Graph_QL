@@ -67,7 +67,7 @@ export default function SignUp() {
   
 
   return (
-    <View className="flex-1 justify-center items-center p-3 gap-2 bg-white">
+    <View className="flex-1 justify-center items-center p-3 gap-2 bg-neutral-800">
       <Image
         className="h-52"
         resizeMode="contain"
@@ -78,21 +78,21 @@ export default function SignUp() {
       </View>
       <View className="w-full gap-2">
         <TextInput
-          className="p-3 border-2 border-gray-400 bg-white text-gray-400 w-full"
+          className="p-3 border-2 border-gray-400 bg-neutral-800 text-gray-400 w-full"
           placeholder="Name"
           value={state.name}
           inputMode="text"
           onChangeText={setName}
         />
         <TextInput
-          className="p-3 border-2 border-gray-400 bg-white text-gray-400 w-full"
+          className="p-3 border-2 border-gray-400 bg-neutral-800 text-gray-400 w-full"
           placeholder="Email Address"
           value={state.email}
           inputMode="email"
           onChangeText={setEmail}
         />
         <TextInput
-          className="p-3 border-2 border-gray-400 bg-white text-gray-400 w-full"
+          className="p-3 border-2 border-gray-400 bg-neutral-800 text-gray-400 w-full"
           placeholder="Password"
           value={state.password}
           inputMode="text"
@@ -100,7 +100,7 @@ export default function SignUp() {
           onChangeText={setPassword}
         />
         <TextInput
-          className="p-3 border-2 border-gray-400 bg-white text-gray-400 w-full"
+          className="p-3 border-2 border-gray-400 bg-neutral-800 text-gray-400 w-full"
           placeholder="Repeat Password"
           value={state.repeatPassword}
           inputMode="text"

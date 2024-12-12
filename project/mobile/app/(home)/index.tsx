@@ -10,8 +10,8 @@ export default function index() {
   const dispatch = useAppDispatch();
 
   return (
-    <View>
-      <Text>Home Screen</Text>
+    <View className="flex flex-col bg-neutral-900">
+      <Text  className="text-white">Home Screen</Text>
 
       <Button
         onPress={async () => {

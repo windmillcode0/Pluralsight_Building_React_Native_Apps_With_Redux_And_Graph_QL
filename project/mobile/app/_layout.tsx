@@ -19,8 +19,8 @@ export default function RootLayout() {
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
 
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(home)" options={{ headerShown: false }} />
+        <Stack  screenOptions={{ headerShown: false }}>
+          <Stack.Screen class="bg-neutral-800" name="(home)" options={{ headerShown: false }} />
         </Stack>
       </PersistGate>
     </Provider>

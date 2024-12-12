@@ -26,6 +26,9 @@ type FormInputs = z.infer<typeof schema>;
 
 export default function CreateNewSession() {
 
+  const [submitSession] = useCreateSessionMutation();
+
+  
   const { control, handleSubmit } = useForm<FormInputs>({
     resolver: zodResolver(schema),
     defaultValues: {

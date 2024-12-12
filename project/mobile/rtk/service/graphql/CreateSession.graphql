@@ -1,0 +1,9 @@
+mutation CreateSession($session: SessionInput!) {
+  createSession(session: $session) {
+    id
+    title 
+    description
+    level 
+    format
+  }
+}
