@@ -1,7 +1,7 @@
-import { View, FlatList, Text, ActivityIndicator, TouchableOpacity } from "react-native";
+import { View, FlatList, Text, ActivityIndicator, TouchableOpacity, Button } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { useMarkSessionAsFavoriteMutation, useSessionsQuery, useUserFavoritesQuery } from "~/rtk/service/enhanced";
-
+import {Link } from 'expo-router';
 function renderItem({ item: session }: { item: { 
   id: string; 
   title: string, 
@@ -90,6 +90,11 @@ export default function SessionsScreen() {
         refreshing={isFetching}
         keyboardShouldPersistTaps="handled"
       />
+      <View className="p-4">
+        <Link href="/(home)/sessions/new" asChild>
+          <Button title="Create New Session"></Button>
+        </Link>
+      </View>      
     </View>
   );
 }
